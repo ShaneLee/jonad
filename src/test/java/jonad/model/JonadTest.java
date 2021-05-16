@@ -152,6 +152,12 @@ class JonadTest
         }
 
         @Test
+        void itFlatMapsToEmpty()
+        {
+            Assertions.assertEquals(Jonad.empty(), Jonad.of(S_VAL_1).flatMap(res -> Jonad.empty()));
+        }
+
+        @Test
         void itDoesntFlatMapWhenNoValuePresent()
         {
             Assertions.assertEquals(Jonad.empty(), Jonad.empty().flatMap(res -> Jonad.of(S_VAL_1)));
