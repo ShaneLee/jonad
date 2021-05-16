@@ -74,7 +74,7 @@ public interface Monad<T>
      * as an argument to this method
      * @param t the default value
      */
-    T getOrDefault(final T t);
+    T getOrDefault(T t);
 
     /**
      * If this Monad doesn't have a value, invoke

@@ -20,11 +20,22 @@ public class Jonad<T> implements Monad<T>
 {
     private final T val;
 
+    /**
+     * Wrap the given value in a Monad
+     * @param val the given value
+     * @return a new Monad
+     */
     public static <T> Jonad<T> of(final T val)
     {
         return new Jonad<>(val);
     }
 
+    /**
+     * Wrap the given value in a Monad if present
+     * otherwise return an empty Monad
+     * @param val the given value
+     * @return a new Monad
+     */
     @SuppressWarnings("unchecked")
     public static <T> Monad<T> orEmpty(final T val)
     {
@@ -44,11 +55,20 @@ public class Jonad<T> implements Monad<T>
         return Jonad.of(val);
     }
 
+    /**
+     * Wrap the given value from the supplier in a Monad
+     * @param f the supplier function providing the value to wrap
+     * @return a new Monad
+     */
     public static <T> Jonad<T> fromSupplier(final Supplier<T> f)
     {
         return new Jonad<>(f.get());
     }
 
+    /**
+     * Create a new empty Monad
+     * @return a new empty Monad
+     */
     public static <T> Jonad<T> empty()
     {
         return new Jonad<>(null);
@@ -268,10 +288,12 @@ public class Jonad<T> implements Monad<T>
         {
             return Jonad.of(f.apply(val));
         }
+        // CSOFF: IllegalCatch
         catch (Exception e)
         {
             return (Monad<U>) this;
         }
+        // CSON: IllegalCatch
     }
 
     @SuppressWarnings("unchecked")
