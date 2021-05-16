@@ -48,7 +48,13 @@ class JonadTest
         }
 
         @Test
-        void itCreatesEmptyFromnull()
+        void itCreatesFromValue()
+        {
+            Assertions.assertEquals(Jonad.of(S_VAL_1), Jonad.orEmpty(S_VAL_1));
+        }
+
+        @Test
+        void itCreatesEmptyFromNull()
         {
             Assertions.assertEquals(Jonad.empty(), Jonad.orEmpty(null));
         }
