@@ -21,6 +21,7 @@
         <version.surefire>3.0.0-M5</version.surefire>
         <version.jacoco>0.8.7</version.jacoco>
         <version.checkstyle>3.1.2</version.checkstyle>
+        <version.spotbugs>4.2.0</version.spotbugs>
 
         <!--        Set encoding-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -155,6 +156,11 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+                <version>${version.spotbugs}</version>
             </plugin>
         </plugins>
     </build>
