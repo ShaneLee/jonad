@@ -21,6 +21,7 @@
         <version.surefire>3.0.0-M5</version.surefire>
         <version.jacoco>0.8.7</version.jacoco>
         <version.checkstyle>3.1.2</version.checkstyle>
+        <version.puppycrawl.checkstyle>8.42</version.puppycrawl.checkstyle>
         <version.spotbugs>4.2.0</version.spotbugs>
 
         <!--        Set encoding-->
@@ -147,6 +148,13 @@
                     <failsOnError>true</failsOnError>
                     <linkXRef>false</linkXRef>
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.puppycrawl.tools</groupId>
+                        <artifactId>checkstyle</artifactId>
+                        <version>${version.puppycrawl.checkstyle}</version>
+                    </dependency>
+                </dependencies>
                 <executions>
                     <execution>
                         <id>validate</id>

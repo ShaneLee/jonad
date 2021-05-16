@@ -59,7 +59,7 @@ limitations under the License.
 
         <module name="JavadocMethod">
             <property name="tokens" value="METHOD_DEF,ANNOTATION_FIELD_DEF"/>
-            <property name="scope" value="public"/>
+            <property name="accessModifiers" value="public"/>
             <property name="allowMissingParamTags" value="true"/>
             <property name="allowMissingReturnTag" value="true"/>
         </module>
