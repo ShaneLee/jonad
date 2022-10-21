@@ -25,7 +25,7 @@ public class Jonad<T> implements Monad<T>
      * @param val the given value
      * @return a new Monad
      */
-    public static <T> Jonad<T> of(final T val)
+    public static <T> Monad<T> of(final T val)
     {
         return new Jonad<>(val);
     }
@@ -60,7 +60,7 @@ public class Jonad<T> implements Monad<T>
      * @param f the supplier function providing the value to wrap
      * @return a new Monad
      */
-    public static <T> Jonad<T> fromSupplier(final Supplier<T> f)
+    public static <T> Monad<T> fromSupplier(final Supplier<T> f)
     {
         return new Jonad<>(f.get());
     }
@@ -69,7 +69,7 @@ public class Jonad<T> implements Monad<T>
      * Create a new empty Monad
      * @return a new empty Monad
      */
-    public static <T> Jonad<T> empty()
+    public static <T> Monad<T> empty()
     {
         return new Jonad<>(null);
     }
