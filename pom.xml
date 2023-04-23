@@ -6,7 +6,7 @@
 
     <groupId>ee.shanel</groupId>
     <artifactId>jonad</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
 
     <properties>
         <version.lombok>1.18.20</version.lombok>
