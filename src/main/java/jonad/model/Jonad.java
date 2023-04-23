@@ -37,7 +37,7 @@ public class Jonad<T> implements Monad<T>
      * @return a new Monad
      */
     @SuppressWarnings("unchecked")
-    public static <T> Monad<T> orEmpty(final T val)
+    public static <T, U> Monad<U> orEmpty(final T val)
     {
         if (val == null)
         {
@@ -46,13 +46,13 @@ public class Jonad<T> implements Monad<T>
 
         if (val instanceof Optional)
         {
-            return (Monad<T>) Jonad.of(val)
+            return (Monad<U>) Jonad.of(val)
                     .map(Optional.class::cast)
                     .filter(Predicate.not(Optional::isEmpty))
                     .map(Optional::get);
         }
 
-        return Jonad.of(val);
+        return (Monad<U>) Jonad.of(val);
     }
 
     /**
